@@ -6,6 +6,14 @@ var bot = new Discord.Client();
 var TOKEN = process.env.TOKEN;
 var https = require("https");
 var fs_1 = require("fs");
+///****** express app, for heroku site
+var express = require('express');
+var app = express();
+app.get('/', function (req, res) {
+    res.send('hello world');
+});
+app.listen(3000);
+///******
 var curseCount = parseInt(fs_1.readFileSync("curseCount.carlson").toString());
 var pushupCount = parseInt(fs_1.readFileSync("pushupCount.carlson").toString());
 var commandList = {
