@@ -9,7 +9,7 @@ import * as https from 'https';
 import {readFileSync, writeFile} from 'fs';
 
 ///****** express app, for heroku site
-const express = require('express')
+import * as express from 'express'
 const app = express()
 
 app.get('/', function (req, res) {
@@ -19,10 +19,8 @@ app.get('/', function (req, res) {
 app.listen(3000)
 ///******
 
-
 var curseCount = parseInt(readFileSync("curseCount.carlson").toString());
 var pushupCount = parseInt(readFileSync("pushupCount.carlson").toString());
-
 
 let commandList = 
 {
